@@ -4,8 +4,16 @@ import Container from './container/Container.jsx'
 import Logo from './Logo.jsx'
 import LogoutBtn from './Header/LogOutBtn.jsx'
 import RTE from './RTE.jsx'
+import SignUp from './SignUp.jsx'
+import Login from './Login.jsx'
+import PostCard from './PostCard.jsx'
+import PostForm from './post-form/PostForm.jsx'
+import AuthLayout from './AuthLayout.jsx'
+import Button from './Button.jsx'
+import Input from './Input.jsx'
+import Select from "./Select";
 
 
 export {
-    Header, Footer, Container, Logo, LogoutBtn, RTE
+    Header, Footer, Container, Logo, LogoutBtn, RTE, SignUp, Login, PostCard, PostForm, AuthLayout, Button, Input, Select
 }
