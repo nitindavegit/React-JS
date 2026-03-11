@@ -132,7 +132,20 @@ export class Service {
     }
 
     getFilePreview(fileId) {
-        return this.bucket.getFilePreview(
+        const result = this.bucket.getFilePreview(
+            config.appWriteBucketId,
+            fileId,
+            {
+                width: 500,
+                height: 500
+            }
+        )
+
+        return result.toString()
+    }
+
+    getFileDownload(fileId) {
+        return this.bucket.getFileDownload(
             config.appWriteBucketId,
             fileId
         )
