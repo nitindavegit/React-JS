@@ -51,18 +51,14 @@ function SignUp() {
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-                <form onSubmit={handleSubmit(create)}>
+                <form onSubmit={handleSubmit(signup)}>
                     <div className='space-y-5'>
                         <Input
 
                             label="Full Name: "
                             placeholder="Enter your full name"
-                            {...register("email", {
+                            {...register("name", {
                                 required: true,
-                                validate: {
-                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                        "Email address must be a valid address",
-                                }
                             })
 
                             }
@@ -84,7 +80,7 @@ function SignUp() {
                             placeholder="Enter your password"
                             type='password'
                             {
-                            ...register("passowrd", {
+                            ...register("password", {
                                 required: true,
                                 validate: {
                                     matchPattern: (value) => /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(value) || "Password must be strong enough"

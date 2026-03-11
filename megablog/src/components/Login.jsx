@@ -5,7 +5,6 @@ import { Button, Input, Logo } from './index'
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from 'react-hook-form'
-import { Condition } from "appwrite";
 
 function Login() {
     const navigate = useNavigate()
@@ -72,11 +71,14 @@ function Login() {
                             label="password"
                             placeholder="Enter your password"
                             type='password'
-                           
+                            {...register("password", {
+                                required: true,
+                            })}
+
                         />
                         <button
-                        type="submit"
-                        className="w-full"
+                            type="submit"
+                            className="w-full"
                         >
                             Sign In
                         </button>

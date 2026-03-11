@@ -9,10 +9,12 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
             {label && <label className='inline-block mb-1 pl-1'>{label}</label>}4
 
             <Controller
+
                 name={name || 'content'}
                 control={control}
                 render={({ field: { onChange } }) => (
                     <Editor
+                        apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
                         initialValue={defaultValue}
                         init={{
                             initialValue: defaultValue,
